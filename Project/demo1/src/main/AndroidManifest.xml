@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.
-  -->
+<?xml version="1.0" encoding="utf-8"?><!--   ~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dodola.deepin.demo1">
 
@@ -25,6 +23,9 @@
                 android:name="dodometa"
                 android:value="dododola" />
         </activity>
+        <activity
+            android:name="dodola.deepin.proxydemo.ProxyDemoActivity"
+            android:theme="@style/Theme.AppCompat"></activity>
     </application>
 
 </manifest>

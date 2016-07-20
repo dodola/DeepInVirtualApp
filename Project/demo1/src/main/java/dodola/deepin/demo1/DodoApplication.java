@@ -34,28 +34,28 @@ public class DodoApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        //从PackageManager里拿取全部的Activity桩
-        initStub();
-        mainThread = ActivityThread.currentActivityThread();
-// 主进程名
-        mainProcessName = base.getApplicationInfo().processName;
-        // 当前进程名
-        processName = mainThread.getProcessName();
-        if (processName.equals(mainProcessName)) {
-            processType = ProcessType.Main;
-        } else if (isAppProcess(processName)) {
-            processType = ProcessType.VAppClient;
-        } else {
-            processType = ProcessType.CHILD;
-        }
-        mOriginPackageManager = this.getPackageManager();
-        //此处注入补丁
-        try {
-            PatchManager.getInstance().injectAll();
-            PatchManager.getInstance().checkEnv();
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
-        }
+//        //从PackageManager里拿取全部的Activity桩
+//        initStub();
+//        mainThread = ActivityThread.currentActivityThread();
+//// 主进程名
+//        mainProcessName = base.getApplicationInfo().processName;
+//        // 当前进程名
+//        processName = mainThread.getProcessName();
+//        if (processName.equals(mainProcessName)) {
+//            processType = ProcessType.Main;
+//        } else if (isAppProcess(processName)) {
+//            processType = ProcessType.VAppClient;
+//        } else {
+//            processType = ProcessType.CHILD;
+//        }
+//        mOriginPackageManager = this.getPackageManager();
+//        //此处注入补丁
+//        try {
+//            PatchManager.getInstance().injectAll();
+//            PatchManager.getInstance().checkEnv();
+//        } catch (Throwable throwable) {
+//            throwable.printStackTrace();
+//        }
 
     }
 

@@ -14,8 +14,6 @@ import dodola.deepin.hook.HCallbackHook;
 
 /**
  * @author Lody
- *         <p>
- *         <p/>
  *         注入管理器,维护全部的注入对象.
  */
 public final class PatchManager {

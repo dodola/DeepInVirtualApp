@@ -57,6 +57,7 @@ import dodola.deepin.patch.ActivityManagerPatch;
     private void replaceIntent(IBinder resultTo, Object[] args, int intentIndex) {
         //由于我们没有在Manifest里注册这个类,所以我们获取不到这个ActivityInfo,so我们直接从一个桩里去信息赋值到启动的Activity中
         final Intent targetIntent = (Intent) args[intentIndex];
+
         ActivityInfo stubInfo = DodoApplication.info;
         Intent stubIntent = new Intent();
         stubIntent.setClassName(stubInfo.packageName, stubInfo.name);//此处其实new了一个ComponentName

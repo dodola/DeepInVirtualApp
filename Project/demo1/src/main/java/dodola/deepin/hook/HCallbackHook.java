@@ -15,20 +15,8 @@ import dodola.common.utils.ActivityRecordCompat;
 import dodola.common.utils.ExtraConstants;
 import dodola.deepin.demo1.DodoApplication;
 
-/**
- * @author Lody
- *         <p>
- *         <p>
- *         注入我们的Callback到
- *         <h1>ActivityThread$H</h1>.
- * @see Handler.Callback
- * @see ActivityThread
- */
 public class HCallbackHook implements Handler.Callback, Injectable {
 
-    ////////////////////////////////////////////////////////////////
-    ////////////////// Copy from ActivityThread$H////////////////////
-    ////////////////////////////////////////////////////////////////
     public static final int LAUNCH_ACTIVITY = 100;
 
     private static final String TAG = HCallbackHook.class.getSimpleName();
