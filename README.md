@@ -6,10 +6,11 @@ VirtualApp 是一个 App 虚拟引擎的开源实现。 VirtualApp 在你的 App
 
 VirtualApp 项目地址：https://github.com/asLody/VirtualApp
 
-之前跟lody说过要写个技术文档。
-
 这个项目可以作为VirtualApp的技术文档，严格意义上不算技术文档，是分析VirtualApp所使用的各个技术点，以及系统各个组件的启动过程和寻找hook点的过程，并从最初始踩坑的状态到完成一个低配版的双开框架，酱紫。
+
 
 ## 进度 
 1. 第一部分demo已经提交，将VirtualApp的启动Activity部分拆解出来，重要的地方加入了注释。文档还在写中，内容较多。
 注：该Demo暂时避开了ClassLoader部分的逻辑。
+
+回归，加班了一个多月，项目终于要完啦
