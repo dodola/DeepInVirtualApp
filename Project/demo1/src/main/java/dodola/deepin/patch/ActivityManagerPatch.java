@@ -28,18 +28,21 @@ import dodola.deepin.hook.Hook_StartActivityAsUser;
  */
 
 @Patch({/*Hook_StartActivities.class,*/ Hook_StartActivity.class, Hook_StartActivityAsCaller.class,
-        Hook_StartActivityAsUser.class, }) public class ActivityManagerPatch
+        Hook_StartActivityAsUser.class})
+public class ActivityManagerPatch
         extends PatchObject<IActivityManager, HookObject<IActivityManager>> {
 
     public static IActivityManager getAMN() {
         return ActivityManagerNative.getDefault();
     }
 
-    @Override protected HookObject<IActivityManager> initHookObject() {
+    @Override
+    protected HookObject<IActivityManager> initHookObject() {
         return new HookObject<IActivityManager>(getAMN());
     }
 
-    @Override public void inject() throws Throwable {
+    @Override
+    public void inject() throws Throwable {
 
         Field f_gDefault = ActivityManagerNative.class.getDeclaredField("gDefault");
         if (!f_gDefault.isAccessible()) {
@@ -62,18 +65,21 @@ import dodola.deepin.hook.Hook_StartActivityAsUser;
         }
 
         HookBinder<IActivityManager> hookAMBinder = new HookBinder<IActivityManager>() {
-            @Override protected IBinder queryBaseBinder() {
+            @Override
+            protected IBinder queryBaseBinder() {
                 return ServiceManager.getService(Context.ACTIVITY_SERVICE);
             }
 
-            @Override protected IActivityManager createInterface(IBinder baseBinder) {
+            @Override
+            protected IActivityManager createInterface(IBinder baseBinder) {
                 return getHookObject().getProxyObject();
             }
         };
         hookAMBinder.injectService(Context.ACTIVITY_SERVICE);
     }
 
-    @Override public boolean isEnvBad() {
+    @Override
+    public boolean isEnvBad() {
         return getAMN() != getHookObject().getProxyObject();
     }
 }

@@ -1,1 +1,1 @@
-include  ':commonhook',':demo1'
+include ':commonhook', ':demo1', ':binderdemo', ':demo2'

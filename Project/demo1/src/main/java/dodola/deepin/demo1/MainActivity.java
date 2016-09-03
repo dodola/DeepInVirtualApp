@@ -1,9 +1,14 @@
 package dodola.deepin.demo1;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telecom.Log;
 import android.view.View;
+
+import java.util.List;
 
 public class MainActivity extends Activity {
 
